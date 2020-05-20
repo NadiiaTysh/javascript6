@@ -8,10 +8,18 @@
 ////////////////// Решение //////////////////
 
 const arr = [1, 2, 3, 4, 5, 6];
-let reversarr = [];
-let j = 0;
 
-for (let i = arr.length - 1; i >= 0; i--) {
-    reversarr[j] = arr[i];
-    console.log(reversarr[j]);
+for (let i = 0; i < arr.length - 1; i++) {
+    let isSwapped = false;
+    for (let j = 0; j < arr.length - 1 - i; j++) {
+        if (arr[j] < arr[j + 1]) {
+            let swap = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = swap;
+            isSwapped = true;
+        }
+    }
+    if (!isSwapped) break;
 }
+
+console.log(arr);

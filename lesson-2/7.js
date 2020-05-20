@@ -7,12 +7,12 @@
 ////////////////// Решение //////////////////
 
 const array = [1, 2, 3, 4];
-let sumeven = 0;
+let sumEven = 0;
 
 for (let i = 0; i < array.length; i++) {
-    if (i % 2 === 0) {
-        sumeven += array[i];
+    if (array[i] % 2 === 0) {
+        sumEven += array[i];
     }
 }
 
-console.log(sumeven);
+console.log(sumEven);

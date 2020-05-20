@@ -25,10 +25,8 @@ const value = 'c';
 
 if (value === 'a') {
     console.log('a');
-} else {
-    if (value === 'b' || value === 'c' || value === 'd' || value === 'd') {
+} else if (value === 'b' || value === 'c' || value === 'd' || value === 'd') {
         console.log('others');
     } else {
         console.log('unknown');
-    }
-};
+    };
