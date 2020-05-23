@@ -42,15 +42,15 @@ switch (monthNumber) {
     break;
     case 11: daysInMonth = 31;
     break;
-}
+};
 
 const salaryState = (daysInMonth - dayNumber > 20) ? this.salary = 'good salary' : this.salary = 'bad salary';
 
 Object.defineProperty (person, 'salary', {
-    get () {
+    get() {
         return salaryState;
     }
-})
+});
 
 console.log(person.salary);
 
