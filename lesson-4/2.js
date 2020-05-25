@@ -25,14 +25,17 @@ const dayNumber = today.getDate();
 
 Object.defineProperties(person, {
     rate: {
-        value: 0,
-        writable: true
+        writable: true,
+        configurable: false,
+        enumerable: false
     },
     salary: {
         get() {
-            const rateByDate = (this.rate === 0) ? 0 : this.rate * dayNumber;
+            const rateByDate = (!this.rate) ? 0 : this.rate * dayNumber;
             return rateByDate;
-        }
+        },
+        configurable: false,
+        enumerable: false
     }
 });
 
