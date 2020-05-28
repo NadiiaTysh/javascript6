@@ -18,26 +18,25 @@
 // Решение
 
 const f = function() {
-    let arrayInArgument = arguments[0];
-    
-    if (!Array.isArray(arrayInArgument)) {
+    if (!Array.isArray(arguments[0])) {
         throw new Error('Argument is not an array');
     }
-    if (arrayInArgument.length === 0) {
+    if (arguments[0].length === 0) {
         throw new Error('Array is empty');
     }
     
-    if (arrayInArgument.length === 1) {
-        console.log(arrayInArgument[0]);
+    if (arguments[0].length === 1) {
+        console.log(arguments[0][0]);
     } else {
-        let element = arrayInArgument.splice(0, 1);
+        let element = arguments[0].splice(0, 1);
 
         console.log(element[0]);
-        f(arrayInArgument);
+        f(arguments[0]);
     }
 
-    return undefined;
+    return;
 };
+
 
 f([1, 2, 3]);
 // 1

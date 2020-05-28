@@ -12,7 +12,7 @@
 
 const f = function() {
     let sum = 0;
-    for (i = 0; i < arguments.length; i++) {
+    for (let i = 0; i < arguments.length; i++) {
         if (typeof arguments[i] !== 'number') {
             throw new Error('All arguments must be numbers');
         }

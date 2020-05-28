@@ -10,10 +10,13 @@
 // Решение
 
 const f = function(a, b, c) {
-    for (i = 0; i < arguments.length; i++) {
+    for (let i = 0; i < arguments.length; i++) {
         if (typeof arguments[i] !== 'number') {
             throw new Error('All arguments must be numbers');
         }
+    }
+    if (c === 0) {
+        throw new Error('Last argument cannot be 0');
     }
     result = (a - b) / c;
 

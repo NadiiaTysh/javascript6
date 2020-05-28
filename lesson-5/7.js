@@ -21,7 +21,7 @@ const getDivisors = function(x) {
     if (x < 1) {
         throw new Error('Argument is less than 1');
     }
-    let divisorsArray = [];
+    const divisorsArray = [];
     for (i = 1; i <= x; i++) {
         if (x % i === 0) {
             divisorsArray.push(i);

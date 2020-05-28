@@ -23,7 +23,7 @@ const f = function(x) {
     if (typeof x !== 'number') {
         throw new Error('Argument is not a number');
     }
-    if ( x < 1 || x > 7) {
+    if (x < 1 || x > 7) {
         throw new Error('Argument is out of range');
     }
     let dayOfWeek;

@@ -13,7 +13,7 @@ const f = function(x) {
     if (typeof x !== 'number') {
         throw new Error('Argument is not a number');
     }
-    const result = x * x * x;
+    const result = Math.pow(2, 3);
 
     return result;
 };
