@@ -20,20 +20,19 @@
 const createNumberGenerator = () => {
     const array = [];
     const arrayUnique = [];
+    const target = 100;
 
-    return () => {
-        /* Знечение i выбрано 300, чтобы за это количество цыклов вывести уникальные значения и не было undefined
-           в случае повторений. Если указать меньше, может понадобится больше чем 100 итераций чтоб наполнить массив до 100 эллементов*/ 
-        for (let i = 0; i < 300; i++) {
+    return () => { 
+        for (let i = 0; i < target; i++) {
             let numbers = Math.ceil(Math.random()*100);
 
             array.push(numbers);
-            for (num of array) {
+            for (let num of array) {
                 if (!(arrayUnique.includes(num))) {
                     arrayUnique.push(num);
                     
                     return num;
-                } else if (arrayUnique.length === 100) {
+                } else if (arrayUnique.length === target) {
                     throw new Error('There are no more numbers available.');
                 }
             }

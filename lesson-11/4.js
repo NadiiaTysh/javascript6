@@ -29,8 +29,7 @@
 // Решение
 
 const createLogger = () => {
-    const array = [];
-    const obj = {};
+    const history = [];
 
     return {
         call(func, ...rest) {
@@ -39,18 +38,19 @@ const createLogger = () => {
             }
             let result = func(...rest);
             
-            obj.name = func.name;
-            obj.in = rest ? rest : [];
-            obj.out = result ? result : undefined;
+            const obj = {
+                name: func.name,
+                in: rest ? rest : [],
+                out: result ? result : undefined,
+            }
 
-            // делаем копию объекта, чтоб избежать перезаписи
-            array.push(Object.assign({}, obj));
+            history.push(obj);
 
             return obj.out;
         },
         print() {
             
-            return array;
+            return history;
         },
     }
 };

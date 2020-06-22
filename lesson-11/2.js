@@ -12,15 +12,14 @@
 // Решение
 
 const createFibonacciGenerator = () => {
-    let firstNum = 0;
-    let secondNum = 1;
+    let num = 0;
 
     return () => {
-        let temp = firstNum;
-        firstNum = secondNum;
-        secondNum = temp + secondNum;
+        num++;
+        let goldenSection = (1 + Math.sqrt(5)) / 2;
+        let result = (Math.pow(goldenSection, num)) / Math.sqrt(5);
 
-        return firstNum;
+        return Math.round(result);
     }
 };
 
