@@ -31,6 +31,7 @@ function CleanerRobot(
 
     this.clean = () => {
         const cleaningTime = getCleaningTime();
+        energy = energy - ENERGY_CONSUMPTION * getCleaningTime();
 
         console.log(
             `Начинаю процесс уборки. Время уборки: ${cleaningTime} часов.`,
@@ -41,8 +42,6 @@ function CleanerRobot(
     };
 
     // Решение
-
-    energy = energy - ENERGY_CONSUMPTION * getCleaningTime();
 
     this.stop = () => {
         clearTimeout(timerId);
