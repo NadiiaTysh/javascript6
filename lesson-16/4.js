@@ -15,17 +15,26 @@
 
 class Stringer {
     
-    reverse(string) {
+    reverse(string) {       
+        if (typeof string !== 'string') {
+            throw new Error('The argument in reverse method must be a string')
+        }
 
         return string.split('').reverse().join('');
     }
 
     uppercaseFirst(string) {
+        if (typeof string !== 'string') {
+            throw new Error('The argument in uppercaseFirst method must be a string')
+        }
 
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
     uppercaseAll(string) {
+        if (typeof string !== 'string') {
+            throw new Error('The argument in uppercaseAll method must be a string')
+        }
 
         return string.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
     }

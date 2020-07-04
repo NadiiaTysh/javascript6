@@ -30,7 +30,7 @@ class Worker {
     }
 
     getName() {
-        
+
         return `${this.#firstName} ${this.#lastName}`
     }
 

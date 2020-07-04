@@ -41,8 +41,11 @@ class Student extends User {
     }
 
     getCourse() {
-        let course = (new Date()).getFullYear() - this.year;
+        let course = new Date().getFullYear() - this.year;
 
+        if (new Date().getMonth() < 9) {
+            course = course - 1;
+        }
         if (course >= 1 && course <= 5) {
 
             return course;
