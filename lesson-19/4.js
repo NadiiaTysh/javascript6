@@ -46,7 +46,7 @@ class Countries {
                 const statusCode = meta.status;
                 
                 if (statusCode === 200) {
-                    const arrayOfObjecs = JSON.parse(body.toString());
+                    const arrayOfObjecs = JSON.parse(body);
                     const arrayOfTitles = [];
     
                     for(let element of arrayOfObjecs) {

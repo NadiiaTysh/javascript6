@@ -23,15 +23,19 @@ const getCustomers = (people, places) => {
         const newArray = [];
     
         for (let customer of verifiedPeople) {
-            for (let country of places) {
-                if (customer.id === country.id) {
-                    const verifiedObj = Object.assign({}, customer, country);
-
-                    newArray.push(verifiedObj);
-                    resolve(newArray);
-                } else {
-                    reject (`We don't have information about country for this customer: ${customer.name}`)
+            const country = places.find(obj => {
+                if (obj.id === customer.id) {
+                    
+                    return obj;
                 }
+            });
+            if (country) {
+                const verifiedObj = Object.assign({}, customer, country);
+
+                newArray.push(verifiedObj);
+                resolve(newArray);
+            } else {
+                reject (`We don't have information about country for this customer: ${customer.name}`)
             }
         }
     })
